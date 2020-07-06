@@ -11,6 +11,7 @@ const createEmployeeRecords=(arr)=>{
    return newArr;
 };
 
+<<<<<<< HEAD
 const createTimeInEvent=(arr,dateIn)=>{
 const TimeDate=dateIn.split(" ")
 const empObj={type:"TimeIn" , date:TimeDate[0], hour:parseInt(TimeDate[1])}
@@ -59,6 +60,36 @@ const calculatePayroll=(arr)=>{
   },0)
   
 }
+=======
+const createTimeInEvent=(arr,date)=>{
+const TimeDate=date.split(" ")
+const empObj={dateIn:TimeDate[0],timeIn:TimeDate[1]}
+return arr.timeInEvents.push(empObj)
+  
+}
+
+const createTimeOutEvent=(arr,date)=>{
+const TimeDate=date.split(" ")
+const empObj={dateIn:TimeDate[0],timeIn:TimeDate[1]}
+
+return arr.timeOutEvents.push(empObj)
+  
+}
+
+const hoursWorkedOnDate=((arr,date)=>{
+  
+  const timeIn=arr.timeInEvents.find(ele => ele.date === date)
+  const timeOut=arr.timeOutEventsEvents.find(ele => ele.date === date)
+   let result=(timeOut.hour - timeIn.hour)/100
+   return result
+  })
+}
+
+
+
+
+
+>>>>>>> 9e0a35f718084d92d7c884b60e7c5abbc5add196
 
 
 
